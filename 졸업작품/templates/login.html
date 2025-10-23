@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>로그인 / 회원가입 - IT 커리어 빌더</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='login_style.css') }}"
+    />
+  </head>
+  <body>
+    <div
+      class="container"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="authTitle"
+    >
+      <button class="close-btn" id="closeBtn" aria-label="창 닫기">
+        &times;
+      </button>
+
+      <div
+        id="loginTab"
+        class="tab-content active"
+        role="tabpanel"
+        aria-labelledby="authTitle"
+      >
+        <h2 id="authTitle">로그인</h2>
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="이메일"
+          aria-label="이메일 입력"
+        />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="비밀번호"
+          aria-label="비밀번호 입력"
+        />
+        <button class="submit-btn" id="loginBtn">로그인</button>
+        <div class="status-text" id="goSignup">
+          계정이 없으신가요? 회원가입
+        </div>
+      </div>
+      <div id="signupTab" class="tab-content" role="tabpanel">
+        <h2>회원가입</h2>
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="이메일"
+          aria-label="이메일 입력"
+        />
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="비밀번호"
+          aria-label="비밀번호 입력"
+        />
+        <input
+          type="password"
+          id="signupPasswordConfirm"
+          placeholder="비밀번호 확인"
+          aria-label="비밀번호 확인 입력"
+        />
+        <button class="submit-btn" id="signupBtn">회원가입</button>
+        <div class="status-text" id="goLogin">
+          이미 계정이 있으신가요? 로그인
+        </div>
+      </div>
+    </div>
+    <!-- [수정됨] JavaScript 파일 경로를 Flask 서버에 맞게 변경 -->
+    <!-- 'script.js'는 static 폴더에 있는 실제 JS 파일 이름으로 맞춰주세요. -->
+    <script
+      type="module"
+      src="{{ url_for('static', filename='login_script.js') }}"
+    ></script>
+  </body>
+</html>

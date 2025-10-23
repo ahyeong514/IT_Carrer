@@ -1,0 +1,291 @@
+body {
+  background: #1e1e1e;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #e0e0e0;
+}
+
+.navbar {
+  background: #1e1e1e;
+  padding: 12px 48px 6px 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 98px;
+  list-style: none;
+  margin: 0;
+  padding-left: 40px;
+}
+
+ /*네비게이션 글씨색*/
+.navbar ul li a { 
+  color: #e0e0e0;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.45em;
+  line-height: 2.2;
+  padding: 1px 10px 4px 10px;
+  transition: color 0.2s ease;
+}
+/* 이 코드를 CSS 파일에 추가하세요 */
+.navbar ul li a:hover {
+  color: #FFFFFF; /* 마우스를 올리면 더 밝은 흰색으로 변경 */
+}
+
+.navbar ul li a.active {
+  text-decoration: none;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  background: #e0e0e0;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 8px 26px;
+  cursor: pointer;
+  margin-left: auto;
+  position: relative;
+  left: -60px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+/* ★ 호버 효과도 새 색상에 맞게 수정 ★ */
+.login-btn:hover {
+  background: #1e1e1e; /* 배경색 반전 */
+  color: #e0e0e0; /* 글자색 반전 */
+}
+/*내부색*/
+.container {
+  background: #e0e0e0;
+  border-radius: 28px;
+  margin: 20px auto 0 auto;
+  padding: 24px 40px 18px 40px;
+  max-width: 1370px;
+  min-width: 900px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: calc(100vh - 64px);
+}
+
+.home-title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.title-container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.title-container h1 {
+  color: #000000;
+  font-size: 3em;
+  font-weight: 900;
+  margin: 0;
+}
+
+.intro-text {
+  font-size: 1.6em;
+  color: #000000;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+/* 시작하기 버튼 호버 효과 추가 */
+.start-btn {
+  background: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  height: 62px;
+  padding: 12px 36px;
+  width: 160px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-top: 12px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.start-btn:hover {
+  background-color: #121212;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.info-card {
+  border: 2px solid #121212; /* 블랙 테두리로 통일 */
+  border-radius: 18px;
+  flex: 1;
+  min-width: 220px;
+  padding: 24px 18px 28px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  box-sizing: border-box;
+  height: 295px; /* 높이 지정 */
+  margin-top: -45px;
+}
+
+/* 아이콘과 제목 가로 배치 및 가운데 정렬 */
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 50px; /* 아이콘과 타이틀 간 간격과 위치 조절 */
+}
+
+/* 아이콘 */
+/* 배경색을 블랙 계열로 통일 */
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  margin-bottom: 0;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px 28px;
+  
+}
+
+/* 1. 채용 관련 포스팅 (문서/리스트 아이콘) */
+.icon.posting {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/149/149331.png');
+}
+
+/* 2. 최신 IT 뉴스 (사용자가 선택한 아이콘) */
+.icon.news {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2965/2965851.png');
+}
+
+/* 3. IT 자격증 추천 (깔끔한 배지 라인 아이콘) */
+.icon.certificate {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/158/158274.png');
+}
+
+/* 카드 제목 글씨 크기, 색상 변경 */
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #000000;
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* 본문 글씨 크기, 색상, 왼쪽 정렬 */
+.card-desc {
+  font-size: 1.25rem;
+  color: #000000;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+/* 자격증 카드 본문 점표시 리스트 스타일 */
+.certificate-card .card-desc {
+  display: none; /* .card-desc 숨기기 */
+}
+
+.certificate-card ul {
+  padding-left: 1.4em;
+  list-style: disc;
+  color: #1e1e1e;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+  text-align: left; /* 리스트는 왼쪽 정렬 */
+}
+
+.certificate-card ul li {
+  margin-bottom: 0.8em; /* 간격 조절 */
+}
+
+/* 카드 하단 링크 가운데 정렬 */
+.card-link {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #1e1e1e;
+  padding: 10px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: auto;
+  cursor: pointer;
+  align-self: center;
+  transition: backgroound-color 0.2s;
+}
+/*마우스 올렸을 시 효과*/
+.card-link:hover {
+  background-color: #333333; /* 살짝 밝은 검은색으로 */
+}
+
+/* 뉴스 목록(ul)이 넘칠 경우 스크롤을 생성하는 코드 */
+.info-card .news-list {
+  max-height: 180px; /* 뉴스가 표시될 최대 높이 (이 값을 조절해 보세요) */
+  overflow-y: auto;  /* 세로 내용이 넘치면 자동으로 스크롤바 생성 */
+  padding-right: 10px; /* 스크롤바와 텍스트가 겹치지 않도록 여백 추가 */
+}
+
+/* (선택사항) 스크롤바 디자인을 좀 더 예쁘게 꾸미기 */
+.info-card .news-list::-webkit-scrollbar {
+  width: 6px; /* 스크롤바 너비 */
+  
+}
+
+.info-card .news-list::-webkit-scrollbar-thumb {
+  background-color: #1e1e1e; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바를 둥글게 */
+}
+

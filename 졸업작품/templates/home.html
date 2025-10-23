@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200" />
+    <title>IT 커리어 빌더 - 홈</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home_style.css') }}"
+    />
+    <style>
+      .news-link {
+        color: #000;
+        text-decoration: none;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      .news-link:hover {
+        text-decoration: underline;
+      }
+      .news-list {
+        list-style: disc; 
+        padding-left: 1.5em; 
+        margin-top: -10px;
+        /* 내용이 넘칠 경우 스크롤을 위한 스타일 추가 */
+        max-height: 180px;
+        overflow-y: auto;
+        padding-right: 10px;
+      }
+      .news-list li {
+        margin-bottom: 0.8em;
+      }
+      .news-list::-webkit-scrollbar {
+        width: 6px;
+      }
+      .news-list::-webkit-scrollbar-thumb {
+        background-color: #ced6f8;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <nav>
+        <ul>
+          <li><a class="active" href="{{ url_for('home') }}">홈</a></li>
+          <li><a href="{{ url_for('chatbot') }}">챗봇</a></li>
+          <li><a href="{{ url_for('taja') }}">타자 연습</a></li>
+          <li><a href="{{ url_for('mypage') }}">마이페이지</a></li>
+        </ul>
+      </nav>
+      <a href="{{ url_for('login') }}" class="login-btn">로그인</a>
+    </header>
+    <main class="container">
+      <section class="home-title-area">
+        <div class="title-container">
+          <h1>IT 커리어 빌더</h1>
+          <p class="intro-text">
+            직군별 맞춤형 커리어 빌딩으로 체계적인 학습과 커리어를 빌드업
+            해보세요.
+          </p>
+          <button
+            class="start-btn"
+            onclick="location.href='{{ url_for('chatbot') }}'"
+          >
+            시작하기
+          </button>
+        </div>
+        <div class="logo-area">
+          <div class="logo-area">
+            <div class="logo-area">
+              <img 
+                class="logo" 
+                src="{{ url_for('static', filename='images/it_chatbot_logo.svg') }}" 
+                alt="IT 커리어 빌더 로고"
+              >
+            </div>
+        
+        </div>
+        </div>
+      </section>
+
+      <section class="info-cards">
+        <article class="info-card">
+          <div class="info-card-header">
+            <div class="icon posting"></div>
+            <h3 class="card-title">채용 관련 포스팅</h3>
+          </div>
+        
+          <ul class="news-list">
+            {% for job in job_list %}
+              <li style="margin-bottom: 1.2em;">
+                <a href="{{ job.link }}" target="_blank" class="news-link">
+                  {{ job.title }}
+                </a>
+              </li>
+            {% else %}
+              <li>관련 포스팅을 불러올 수 없습니다.</li>
+            {% endfor %}
+          </ul>
+          <a href="https://search.naver.com/search.naver?where=view&sm=tab_jum&query=IT+%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0" target="_blank" class="card-link">더 알아보기</a>
+        </article>
+
+        <article class="info-card">
+          <div class="info-card-header">
+            <div class="icon news"></div>
+            <h3 class="card-title">최신 IT 뉴스</h3>
+          </div>
+          <ul class="news-list">
+            {% for news in news_list %}
+              <li>
+                <a href="{{ news.link }}" target="_blank" class="news-link">
+                  {{ news.title }}
+                </a>
+              </li>
+            {% else %}
+              <li>뉴스를 불러오는 데 실패했습니다.</li>
+            {% endfor %}
+          </ul>
+          <a href="https://news.naver.com/section/105" target="_blank" class="card-link">더 알아보기</a>
+        </article>
+
+        <article class="info-card certificate-card">
+          <div class="info-card-header">
+            <div class="icon certificate"></div>
+            <h3 class="card-title">IT 자격증 추천</h3>
+          </div>
+          
+          <div class="news-list">
+            <ul class="certificate-desc" style="list-style-type: none; padding-left: 0; margin-top: 10px; font-size: 1.1rem; line-height: 1.7;">
+              
+              <li><strong>[국가공인]</strong>
+                <ul style="list-style-type: '✔  '; padding-left: 1.2em; margin-top: 5px; margin-bottom: 10px;">
+                  <li>정보처리기사/산업기사</li>
+                  <li>데이터분석 준전문가(ADsP)</li>
+                  <li>SQL 개발자(SQLD)</li>
+                  <li>리눅스마스터 1급/2급</li>
+                </ul>
+              </li>
+        
+              <li><strong>[클라우드]</strong>
+                <ul style="list-style-type: '✔  '; padding-left: 1.2em; margin-top: 5px; margin-bottom: 10px;">
+                  <li>AWS Solutions Architect</li>
+                  <li>Azure Fundamentals (AZ-900)</li>
+                  <li>CKA (Kubernetes Admin)</li>
+                </ul>
+              </li>
+        
+              <li><strong>[정보보안]</strong>
+                <ul style="list-style-type: '✔  '; padding-left: 1.2em; margin-top: 5px;">
+                  <li>정보보안기사/산업기사</li>
+                  <li>CISSP (국제 공인)</li>
+                </ul>
+              </li>
+        
+            </ul>
+          </div>
+          
+          <a href="https://www.q-net.or.kr/crf005.do?id=crf00505&gSite=Q&gId=" target="_blank" class="card-link">자격증 정보 더보기</a>
+        </article>
+        </section>
+    </main>
+    
+    <script src="{{ url_for('static', filename='home_script.js') }}"></script>
+  </body>
+</html>

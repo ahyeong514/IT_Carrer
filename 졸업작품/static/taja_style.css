@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+.container {
+    background-color: #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    color: #000000;
+}
+h1 {
+    color: #000000;
+}
+.code-display {
+    border: 1px solid #ffffff;
+    padding: 20px;
+    min-height: 150px; /* 높이 확보 */
+    text-align: left;
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    color: #000000;
+    background-color: #ffffff;
+}
+#text-input {
+    width: 95%;
+    height: 50px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ced6f8;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: #1e1e1e;
+    background-color: #fff;
+}
+.results {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #000000;
+}
+/* 버튼 그룹을 오른쪽으로 정렬 */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; /* 버튼 사이 간격 */
+    margin-top: 20px;
+}
+/* 두 버튼에 공통으로 적용될 스타일 */
+.action-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* 모서리 둥글게 */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.action-btn:hover {
+    background-color: #333333;
+}
+.correct {
+    color: #2ecc71;
+}
+.incorrect {
+    color: #e74c3c;
+}
+.current-line {
+    background-color: rgba(35, 34, 161, 0.1);
+}
+.current {
+    border-right: 2px solid #f1c40f;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    from, to { border-right-color: transparent }
+    50% { border-right-color: #f1c40f }
+}
+
+.sidebar-footer {
+  margin-top: 32px;
+  padding: 18px 20px;
+  background: transparent; /* 배경색 없앰 */
+  border: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 14px;
+  width: fit-content;
+  transition: background 0.2s;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
+
+.icon-home-white {
+  flex-shrink: 0;
+}
+
+.sidebar-footer-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+  text-decoration: none;
+  trainsition: color 0.2s;
+}
+.sidebar-footer a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+.sidebar-footer:active {
+  background: #1e1e1e;
+}
+
+/* 이 코드를 CSS 맨 아래에 추가하세요 */
+.sidebar-footer:hover .sidebar-footer-text {
+    color: #b0b0b0; /* 마우스를 올렸을 때 변경될 텍스트 색상 (밝은 회색) */
+  }

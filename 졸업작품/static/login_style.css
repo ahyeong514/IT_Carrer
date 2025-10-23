@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background:  #1e1e1e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1e1e1e;
+}
+.container {
+  background: #fff;
+  border-radius: 28px;
+  width: 360px;
+  padding: 32px 32px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+h2 {
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #000000;
+}
+button.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #000000;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button.submit-btn:hover {
+  background-color: #333333;
+}
+.status-text {
+  margin-top: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333333;
+  cursor: pointer;
+  user-select: none;
+}
+.status-text:hover {
+  color: #1e1e1e;
+  text-decoration: underline;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+}

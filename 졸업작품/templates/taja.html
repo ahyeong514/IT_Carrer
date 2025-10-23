@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>파이썬 코드 타자 연습</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='taja_style.css') }}"
+    />
+</head>
+<body>
+    <div class="container">
+        <h1>파이썬 코드 타자 연습</h1>
+        
+        <div class="code-display" id="code-display"></div>
+        
+        <textarea id="text-input" placeholder="여기에 타이핑하세요."></textarea>
+        
+        <div class="results">
+            <p>타수: <span id="keystrokes">0</span></p>
+            <p>진행 시간: <span id="time-elapsed">0</span> 초</p>
+            <p>정확도: <span id="accuracy">100</span>%</p>
+        </div>
+        
+        <div class="button-group">
+            <button id="restart-btn" class="action-btn">다시 시작</button>
+            <button id="next-btn" class="action-btn" style="display: none;">다음 문제</button>
+        </div>
+    </div>
+
+    <div class="sidebar-footer" tabindex="0" role="button" aria-label="홈으로 이동">
+      <svg class="icon-home-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M3 11L12 3L21 11V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V11Z" stroke="#FFF" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M9 21V14H15V21" stroke="#FFF" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    <a href="{{ url_for('home') }}"><span class="sidebar-footer-text">Home</span></a>
+    </div>
+
+    <script src="{{ url_for('static', filename='taja_script.js') }}"></script>
+</body>
+</html>

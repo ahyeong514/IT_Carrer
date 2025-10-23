@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>IT 커리어 빌더 - 챗봇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='chatbot_style.css') }}"
+    />
+</head>
+<body>
+  <div class="main-container">
+    <aside class="sidebar" aria-label="메뉴">
+      <button class="toggle-sidebar-btn" aria-expanded="true" aria-label="사이드바 열기/닫기" id="toggle-sidebar-btn" style="border:none;background:none;padding:6px;cursor:pointer;">
+        <svg class="sidebar-hamburger" width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+          <line x1="0" y1="2" x2="24" y2="2"></line>
+          <line x1="0" y1="8" x2="24" y2="8"></line>
+          <line x1="0" y1="14" x2="24" y2="14"></line>
+        </svg>
+      </button>
+
+      <div class="sidebar-top">
+        <button class="menu-btn" aria-label="새 채팅 시작" id="new-chat-btn"><svg class="menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7"><path d="M12 5V19"/><path d="M5 12H19"/></svg>새 채팅</button>
+        <button class="menu-btn"><svg class="menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><line x1="18" y1="18" x2="15.5" y2="15.5" stroke="#fff" stroke-width="1.7"/></svg>채팅 검색</button>
+        <button class="menu-btn"><svg class="menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>라이브러리</button>
+      </div>
+      <div class="sidebar-chats-list" tabindex="0" aria-label="채팅 목록">
+        <div class="sidebar-section">채팅</div>
+        <div class="chat-list-item" tabindex="0">
+          이번달 대회 일정 목록 확인
+          <button class="chat-item-menu-btn" aria-label="채팅 옵션 열기" title="옵션">⋮</button>
+          <div class="chat-item-menu" role="menu" aria-hidden="true">
+            <button role="menuitem" class="chat-item-action-btn" data-action="delete">삭제</button>
+            <button role="menuitem" class="chat-item-action-btn" data-action="rename">이름 바꾸기</button>
+          </div>
+        </div>
+        <div class="chat-list-item" tabindex="0">
+          IT 커리어 컨설팅 질문
+          <button class="chat-item-menu-btn" aria-label="채팅 옵션 열기" title="옵션">⋮</button>
+          <div class="chat-item-menu" role="menu" aria-hidden="true">
+            <button role="menuitem" class="chat-item-action-btn" data-action="delete">삭제</button>
+            <button role="menuitem" class="chat-item-action-btn" data-action="rename">이름 바꾸기</button>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+            <a href="templates/home.html" ...>
+
+            <a href="{{ url_for('home') }}" tabindex="0" class="sidebar-footer-link" aria-label="홈으로 이동">
+              <svg ...></svg> 홈으로 이동
+            </a>
+      </div>
+    </aside>
+
+    <section class="chat-section" aria-label="챗봇 대화 영역">
+      <header class="topbar">
+        <div class="logo-title">
+          <div class="logo">
+            <img src="/static/images/it_chatbot_logo.svg" alt="IT 커리어 빌더 로고">
+          </div>
+          <span class="title">IT 커리어 빌더</span>
+        </div>
+          <button id="bookmark-btn" class="bookmark-btn" aria-label="북마크 추가" title="북마크 추가">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1b238f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </button>
+      </header>
+      <div class="chat-area" id="chat-area" aria-live="polite" aria-atomic="false" role="log" tabindex="0">
+        </div>
+      <form class="input-area" autocomplete="off" onsubmit="return false;" role="search" aria-label="챗봇 질문 입력">
+        <button type="button" class="icon-btn plus-btn" aria-label="추가" title="추가" id="add-file-btn">
+          <svg width="24" height="24" fill="none" stroke="#1b238f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+        <input type="file" id="file-input" style="display:none" multiple />
+        <input type="text" class="chat-input" placeholder="질문을 입력하세요." aria-label="질문 입력창" autocomplete="off" spellcheck="false" aria-live="assertive" aria-atomic="true" />
+        <button type="submit" class="send-btn" aria-label="전송 버튼" title="전송"><span>➤</span></button>
+      </form>
+    </section>
+  </div>
+    <script src="{{ url_for('static', filename='chatbot_script.js') }}"></script>
+</body>
+</html>
