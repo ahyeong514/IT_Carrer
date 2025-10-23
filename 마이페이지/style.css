@@ -1,0 +1,284 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+  background: #1e1e1e;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1e1e1e;
+}
+
+/* 컬러 유틸 */
+.color-primary { color: #2322a1; }
+.color-accent { color: #4455ef; }
+.color-muted { color: #4b5563; }
+
+.container {
+  background: #e0e0e0;
+  border-radius: 32px;
+  margin: 24px auto;
+  padding: 40px 60px;
+  max-width: 1370px;
+  min-width: 900px;
+  box-shadow: 0 8px 24px rgba(35, 34, 161, 0.18);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+}
+
+h1, h2 {
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+h1 {
+  font-size: 2.8em;
+  margin: 0 0 24px 0;
+  color: #000000;
+}
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.main-row {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.calendar {
+  flex: 7;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 5px rgba(35,34,161,0.2);
+}
+.right-col {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 목표 박스 */
+.goals {
+  background: #000000;
+  border-radius: 20px;
+  color: #fff;
+  padding: 24px;
+  font-size: 1em;
+}
+.goals h2 {
+  font-size: 1.6em;
+  margin-bottom: 16px;
+}
+.goals ul {
+  font-size: 1.1em;
+  padding-left: 18px;
+}
+.goals ul li {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* 캘린더 */
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.month-nav button {
+  border: none;
+  background: #000000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+.month-nav button:hover {
+  opacity: 0.85;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+.day-header {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+}
+.cell {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  height: 70px;
+  background: #f9faff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  font-size: 13px;
+}
+.cell ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+.cell ul li {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 1px 4px;
+  margin-bottom: 3px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.cell ul li:hover {
+  background-color: #cccccc;
+}
+
+/* 체크리스트 */
+.checklist {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.checklist .done {
+  text-decoration: line-through;
+  color: #333;
+}
+.task-input {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+}
+.task-input input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* 회고 */
+.review {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+.review textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.review button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 12px;
+  margin-right: 5px;
+  cursor: pointer;
+  background: #000000;
+  color: #fff;
+  font-weight: bold;
+}
+.review button:hover {
+  background: #3333;
+}
+
+/* 내 목표 (수정 기능 추가) */
+.goals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.goals h2 {
+  margin: 0;
+  color: #fff !important;
+}
+#editGoalsBtn {
+  background: #fff;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#editGoalsBtn:hover {
+  background: #f0f2f5;
+}
+#goalsInput {
+  width: 100%;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #fff;
+  border-radius: 12px;
+  color: #fff;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.1em;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
+}
+
+/* ============================= */
+/* 오른쪽 하단 플로팅 My Page 버튼 */
+/* ============================= */
+.mypage-float-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 18px rgba(27,35,143,0.18);
+  padding: 13px 24px 13px 18px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  z-index: 100;
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.mypage-float-btn:hover,
+.mypage-float-btn:focus {
+  background: #333;
+  box-shadow: 0 6px 32px rgba(27,35,143,0.32);
+  color: #e4e8fe;
+  text-decoration: underline;
+  outline: none;
+}
+.mypage-float-btn svg {
+  flex-shrink: 0;
+}
